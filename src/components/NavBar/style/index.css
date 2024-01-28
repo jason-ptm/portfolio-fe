@@ -1,0 +1,13 @@
+.navlink::after {
+  display: block;
+  content: '';
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  background-color: #3e64ff;
+
+  transition: all 0.5s;
+}
+.active.navlink::after {
+  transform: scaleX(1);
+}
