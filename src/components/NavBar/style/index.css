@@ -4,7 +4,7 @@
   width: 100%;
   transform: scaleX(0);
   height: 1.5px;
-  background-color: #3e64ff;
+  background-color: #3e65ffb7;
 
   transition: all 0.5s;
 }

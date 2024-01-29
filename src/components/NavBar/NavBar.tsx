@@ -110,9 +110,10 @@ const NavBar: React.FC<INavBarProps> = () => {
 
   useEffect(() => {
     const scrollListener = () => {
-      if (window.scrollY > 0 && window.scrollY < 200) setShowBackground(false);
+      if (window.scrollY >= 0 && window.scrollY < 200) setShowBackground(false);
       else if (!showBackground) setShowBackground(true);
     };
+
     window.addEventListener('scroll', scrollListener);
 
     return () => window.removeEventListener('scroll', scrollListener);
@@ -130,7 +131,7 @@ const NavBar: React.FC<INavBarProps> = () => {
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
-          height: '100%',
+          height: '100vh',
           position: 'absolute',
           top: 0,
           left: 0,
@@ -151,10 +152,16 @@ const NavBar: React.FC<INavBarProps> = () => {
   return (
     <Box
       sx={{
-        height: '70px',
+        position: 'fixed',
+        width: '100%',
+        height: `${showBackground ? 55 : 70}px`,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
+        backgroundColor: `${
+          showBackground ? theme.palette.background.default : ''
+        }`,
+        transition: 'all 0.5s',
       }}
     >
       <ContentLimitator>
