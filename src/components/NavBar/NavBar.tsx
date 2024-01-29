@@ -6,7 +6,6 @@ import {
   useTheme,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { MenuOutline, CloseOutline } from 'react-ionicons';
 import { NavLink, useLocation } from 'react-router-dom';
 import * as colors from '../../utils/constants/colors.json';
 import { routes } from '../../utils/constants/routes';
@@ -14,12 +13,19 @@ import ContentLimitator from '../ContentLimitator';
 import './style/index.css';
 
 interface INavBarProps {}
-interface NavBarItemLinkrops {
+
+interface NavBarItemLinkProps {
   link: string;
   label: string;
 }
 
-export const NavBarItemLink: React.FC<NavBarItemLinkrops> = ({
+interface NavBarMenuItemProps {
+  handleClose: () => void;
+  open: boolean;
+  iconColor: string;
+}
+
+export const NavBarItemLink: React.FC<NavBarItemLinkProps> = ({
   link,
   label,
 }) => {
@@ -41,6 +47,57 @@ export const NavBarItemLink: React.FC<NavBarItemLinkrops> = ({
         {label}
       </NavLink>
     </Typography>
+  );
+};
+
+export const NavBarMenuItem: React.FC<NavBarMenuItemProps> = ({
+  handleClose,
+  open,
+  iconColor,
+}) => {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        gap: '8px',
+        alignItems: 'center',
+        width: '30px',
+        height: '30px',
+      }}
+      onClick={handleClose}
+    >
+      <Box
+        sx={{
+          width: '30px',
+          height: '2px',
+          backgroundColor: iconColor,
+          transform: `rotate(${open ? 45 : 0}deg)`,
+          transformOrigin: 'left',
+          transition: 'all .6s',
+        }}
+      />
+      <Box
+        sx={{
+          width: '30px',
+          height: '2px',
+          backgroundColor: iconColor,
+          opacity: open ? 0 : 1,
+          transition: 'all .6s',
+        }}
+      />
+      <Box
+        sx={{
+          width: '30px',
+          height: '2px',
+          backgroundColor: iconColor,
+          transform: `rotate(${open ? -45 : 0}deg)`,
+          transformOrigin: 'left',
+          transition: 'all .6s',
+        }}
+      />
+    </Box>
   );
 };
 
@@ -80,9 +137,9 @@ const NavBar: React.FC<INavBarProps> = () => {
           zIndex: 5000,
           gap: '20px',
           backgroundColor: theme.palette.background.default,
-          transform: `translateX(${open ? 0 : 100}%)`,
+          transform: `scale(${open ? 1 : 0})`,
           opacity: open ? 1 : 0,
-          transition: 'all 0.3s',
+          transition: 'scale 1s, opacity 0.5s',
         }
       : {
           display: 'flex',
@@ -130,11 +187,11 @@ const NavBar: React.FC<INavBarProps> = () => {
                 cursor: 'pointer',
               }}
             >
-              {open ? (
-                <CloseOutline color={'#00000'} height="25px" width="25px" />
-              ) : (
-                <MenuOutline color={'#00000'} height="25px" width="25px" />
-              )}
+              <NavBarMenuItem
+                iconColor={theme.palette.text.primary}
+                handleClose={() => setOpen(!open)}
+                open={open}
+              />
             </Box>
           )}
 
