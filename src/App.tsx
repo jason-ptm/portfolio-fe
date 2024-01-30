@@ -1,8 +1,9 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { NavBar } from './components';
-import { ColorModeContext, useMode } from './utils/theme';
-import { BrowserRouter } from 'react-router-dom';
+import { ColorModeContext, useMode } from './utils';
+import { Welcome } from './views';
 
 function App() {
   const { theme, colorMode } = useMode();
@@ -14,6 +15,7 @@ function App() {
           <BrowserRouter>
             <CssBaseline />
             <NavBar />
+            <Welcome />
           </BrowserRouter>
         </ThemeProvider>
       </ColorModeContext.Provider>
