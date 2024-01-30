@@ -1,5 +1,6 @@
 import { ThemeOptions, createTheme } from '@mui/material';
-import { createContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
+import { StorageService } from './';
 import * as colors from './constants/colors.json';
 
 export const themeColorTokens = (mode: string) => ({
@@ -69,34 +70,26 @@ export const ColorModeContext = createContext({
 });
 
 export const useMode = () => {
-  const [mode, setMode] = useState<'dark' | 'light'>('light');
-
-  useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia(
-      '(prefers-colors-scheme: dark)'
-    );
-
-    const handleDarkModeChange = (event: MediaQueryListEvent) => {
-      setMode(event.matches ? 'dark' : 'light');
-    };
-
-    darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
-    setMode(darkModeMediaQuery.matches ? 'dark' : 'light');
-
-    return () => {
-      darkModeMediaQuery.removeEventListener('change', handleDarkModeChange);
-    };
-  }, []);
+  const localStorageTheme = StorageService.getThemeMode();
+  const [mode, setMode] = useState(
+    localStorageTheme ? localStorageTheme : 'light'
+  );
 
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () =>
-        setMode((prev) => (prev === 'light' ? 'dark' : 'light')),
+        setMode((prev) => {
+          StorageService.setThemeMode(prev === 'light' ? 'dark' : 'light');
+          return prev === 'light' ? 'dark' : 'light';
+        }),
     }),
     []
   );
 
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const theme = useMemo(
+    () => createTheme(themeSettings(mode as 'light' | 'dark')),
+    [mode]
+  );
 
   return { theme, colorMode };
 };
