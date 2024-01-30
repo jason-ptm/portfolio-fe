@@ -232,6 +232,8 @@ const NavBar: React.FC<INavBarProps> = () => {
             fontWeight={700}
             fontFamily="IBM Plex Sans"
             sx={{
+              position: 'relative',
+              zIndex: 5100,
               letterSpacing: '0.5mm',
               textTransform: 'uppercase',
             }}
