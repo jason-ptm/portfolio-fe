@@ -12,7 +12,7 @@ export const themeColorTokens = (mode: string) => ({
       }),
 });
 
-export const themSettings = (mode: 'dark' | 'light'): ThemeOptions => {
+export const themeSettings = (mode: 'dark' | 'light'): ThemeOptions => {
   const colors = themeColorTokens(mode);
 
   return {
@@ -53,25 +53,13 @@ export const themSettings = (mode: 'dark' | 'light'): ThemeOptions => {
           }),
     },
     typography: {
-      fontFamily: ['Inter', 'Nunito', 'sans-serif'].join(','),
-      h1: {
-        fontFamily: ['Inter', 'Nunito', 'sans-serif'].join(','),
-      },
-      h2: {
-        fontFamily: ['Inter', 'Nunito', 'sans-serif'].join(','),
-      },
-      h3: {
-        fontFamily: ['Inter', 'Nunito', 'sans-serif'].join(','),
-      },
-      h4: {
-        fontFamily: ['Inter', 'Nunito', 'sans-serif'].join(','),
-      },
-      h5: {
-        fontFamily: ['Inter', 'Nunito', 'sans-serif'].join(','),
-      },
-      h6: {
-        fontFamily: ['Inter', 'Nunito', 'sans-serif'].join(','),
-      },
+      fontFamily: [
+        'Nunito',
+        'Inter',
+        'sans-serif',
+        'Sixtyfour',
+        'IBM Plex Sans',
+      ].join(','),
     },
   };
 };
@@ -108,7 +96,7 @@ export const useMode = () => {
     []
   );
 
-  const theme = useMemo(() => createTheme(themSettings(mode)), [mode]);
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
   return { theme, colorMode };
 };
