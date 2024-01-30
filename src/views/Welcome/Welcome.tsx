@@ -68,26 +68,6 @@ export const Background: React.FC = () => {
         }}
       />
       <Box sx={{ flex: '1' }} />
-      <Box
-        sx={{
-          margin: '20px 0',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100px',
-          height: '100px',
-          borderRadius: '50px',
-          backgroundColor: colors[theme.palette.mode].blue[800],
-          cursor: 'pointer',
-          position: 'absolute',
-          top: 'calc(50% + 176px)',
-          left: 'calc(50% - 50px)',
-        }}
-      >
-        <span className="slide-top">
-          <ChevronDownOutline height="30px" width="30px" />
-        </span>
-      </Box>
     </Box>
   );
 };
@@ -152,6 +132,26 @@ const Welcome: React.FC<IWelcomeProps> = () => {
               />
             </span>
           </Typography>
+          <Box
+            sx={{
+              margin: '20px 0',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100px',
+              height: '100px',
+              borderRadius: '50px',
+              backgroundColor: colors[theme.palette.mode].blue[800],
+              cursor: 'pointer',
+              position: 'absolute',
+              top: 'calc(50% + 176px)',
+              left: 'calc(50% - 50px)',
+            }}
+          >
+            <span className="slide-top">
+              <ChevronDownOutline height="30px" width="30px" />
+            </span>
+          </Box>
         </Box>
       </ContentLimitator>
     </Box>
