@@ -46,12 +46,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       },
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+        backgroundColor: theme.palette.mode === 'dark' ? '#d9e3ff' : '#aab4be',
       },
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
+    backgroundColor: theme.palette.mode === 'dark' ? '#1b37f5' : '#001e3c',
     width: 32,
     height: 32,
     '&::before': {
@@ -90,7 +90,7 @@ export const NavBarItemLink: React.FC<NavBarItemLinkProps> = ({
           textDecoration: 'none',
           color: isActive
             ? theme.palette.primary.main
-            : colors[theme.palette.mode].black[300],
+            : colors[theme.palette.mode].black[800],
           transition: 'all 1s',
         })}
       >
@@ -204,6 +204,7 @@ const NavBar: React.FC<INavBarProps> = () => {
     <Box
       sx={{
         position: 'fixed',
+        zIndex: 5000,
         width: '100%',
         height: `${showBackground ? 55 : 70}px`,
         display: 'flex',

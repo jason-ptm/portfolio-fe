@@ -64,7 +64,10 @@ export const Background: React.FC = () => {
       <Box
         sx={{
           flex: '1',
-          backgroundColor: colors[theme.palette.mode].blue[800],
+          backgroundColor:
+            theme.palette.mode === 'light'
+              ? colors[theme.palette.mode].blue[800]
+              : colors[theme.palette.mode].blue[300],
         }}
       />
       <Box sx={{ flex: '1' }} />
@@ -80,6 +83,8 @@ const Welcome: React.FC<IWelcomeProps> = () => {
       sx={{
         width: '100vw',
         height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
       }}
     >
       <Background />
@@ -141,9 +146,13 @@ const Welcome: React.FC<IWelcomeProps> = () => {
               width: '100px',
               height: '100px',
               borderRadius: '50px',
-              backgroundColor: colors[theme.palette.mode].blue[800],
+              backgroundColor:
+                theme.palette.mode === 'light'
+                  ? colors[theme.palette.mode].blue[800]
+                  : colors[theme.palette.mode].blue[300],
               cursor: 'pointer',
               position: 'absolute',
+              zIndex: 100,
               top: 'calc(50% + 176px)',
               left: 'calc(50% - 50px)',
             }}

@@ -33,7 +33,7 @@ export const themeSettings = (mode: 'dark' | 'light'): ThemeOptions => {
               light: colors.black[700],
             },
             background: {
-              default: colors.black[900],
+              default: colors.black[100],
             },
           }
         : {
@@ -49,7 +49,7 @@ export const themeSettings = (mode: 'dark' | 'light'): ThemeOptions => {
               light: colors.black[100],
             },
             background: {
-              default: colors.blue[1000],
+              default: colors.black[100],
             },
           }),
     },
