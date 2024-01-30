@@ -7,9 +7,9 @@ import {
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { ContentLimitator } from '..';
 import * as colors from '../../utils/constants/colors.json';
 import { routes } from '../../utils/constants/routes';
-import ContentLimitator from '../ContentLimitator';
 import './style/index.css';
 
 interface INavBarProps {}
@@ -178,6 +178,7 @@ const NavBar: React.FC<INavBarProps> = () => {
           <Typography
             variant="h4"
             fontWeight={700}
+            fontFamily="IBM Plex Sans"
             sx={{
               letterSpacing: '0.5mm',
               textTransform: 'uppercase',
