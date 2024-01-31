@@ -1,7 +1,7 @@
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Box, Typography, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronDownOutline } from 'react-ionicons';
 import { ContentLimitator } from '../../components';
 import * as colors from '../../utils/constants/colors.json';
 import './style/index.css';
@@ -110,7 +110,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
             {t('welcome.title1')}
           </Typography>
           <Typography
-            variant="h2"
+            variant="h1"
             fontWeight={700}
             align="center"
             fontFamily="IBM Plex Sans"
@@ -154,7 +154,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
             }}
           >
             <span className="slide-top">
-              <ChevronDownOutline height="30px" width="30px" />
+              <KeyboardArrowDownIcon height="30px" width="30px" />
             </span>
           </Box>
         </Box>
