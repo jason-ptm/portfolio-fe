@@ -4,8 +4,7 @@
       "navBar": {
         "home": "Inicio",
         "about": "Sobre mi",
-        "studies": "Estudios",
-        "knowledge": "Conocimiento",
+        "resume": "Resumen",
         "projects": "Proyectos",
         "english": "English",
         "spanish": "Español"
@@ -19,7 +18,8 @@
       "about": {
         "title": "Soy Jason Solarte, un desarrollador web trabajando como Freelancer desde Bogota, Colombia.",
         "text1": "Sobre los pasados 2+ años, he trabajado en varias areas del desarrollo digital, incluyendo desarrollo front-end, back-end y diseño web. Soy un estudiante universitario con ancias de nuevos retos.",
-        "text2": "En estos dias, me enfoco en aprender cada vez mas del mundo del desarrollo, mejorar mis conocmientos previos y dar lo mejor de mi en cada proyecto personal o profesional."
+        "text2": "En estos dias, me enfoco en aprender cada vez mas del mundo del desarrollo, mejorar mis conocmientos previos y dar lo mejor de mi en cada proyecto personal o profesional.",
+        "cv": "Descargar CV"
       }
     }
   },
@@ -28,8 +28,7 @@
       "navBar": {
         "home": "Home",
         "about": "About me",
-        "studies": "Studies",
-        "knowledge": "Knowledge",
+        "resume": "Resume",
         "projects": "Projects",
         "english": "English",
         "spanish": "Español"
@@ -43,7 +42,8 @@
       "about": {
         "title": "I'm Jason Solarte, web developer working as Freelancer from Bogota, Colombia.",
         "text1": "Over the past 2+ years, i've been working in various areas of digital development, including front-end development, back-end development and web design. I'm a college student eager for new challenges.",
-        "text2": "These days I focus on learning more and more about the world of development, improving my previous knowledge and giving my best in each personal or professional project."
+        "text2": "These days I focus on learning more and more about the world of development, improving my previous knowledge and giving my best in each personal or professional project.",
+        "cv": "Download CV"
       }
     }
   }
