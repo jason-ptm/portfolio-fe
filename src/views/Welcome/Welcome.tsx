@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import './style/index.css';
 import { Box, Typography, useTheme } from '@mui/material';
-import * as colors from '../../utils/constants/colors.json';
-import { ContentLimitator } from '../../components';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronDownOutline } from 'react-ionicons';
+import { ContentLimitator } from '../../components';
+import * as colors from '../../utils/constants/colors.json';
+import './style/index.css';
 
 interface IWelcomeProps {}
 
@@ -64,10 +65,7 @@ export const Background: React.FC = () => {
       <Box
         sx={{
           flex: '1',
-          backgroundColor:
-            theme.palette.mode === 'light'
-              ? colors[theme.palette.mode].blue[800]
-              : colors[theme.palette.mode].blue[300],
+          backgroundColor: colors[theme.palette.mode].blue[1000],
         }}
       />
       <Box sx={{ flex: '1' }} />
@@ -77,6 +75,7 @@ export const Background: React.FC = () => {
 
 const Welcome: React.FC<IWelcomeProps> = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -108,7 +107,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
             }}
             fontFamily={'Sixtyfour'}
           >
-            Hola! soy
+            {t('welcome.title1')}
           </Typography>
           <Typography
             variant="h2"
@@ -116,7 +115,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
             align="center"
             fontFamily="IBM Plex Sans"
           >
-            Jason Solarte
+            {t('welcome.title2')}
           </Typography>
           <Typography
             variant="h4"
@@ -124,7 +123,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
             align="center"
             fontFamily="IBM Plex Sans"
           >
-            {'Soy desarrollador '}
+            {`${t('welcome.title3')} `}
             <span
               style={{
                 color: theme.palette.primary.main,
@@ -132,7 +131,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
               }}
             >
               <WordPartialShow
-                words={['front-end.', 'back-end.', 'full-stack.']}
+                words={t('welcome.professions', { returnObjects: true })}
                 timer={200}
               />
             </span>
@@ -146,10 +145,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
               width: '100px',
               height: '100px',
               borderRadius: '50px',
-              backgroundColor:
-                theme.palette.mode === 'light'
-                  ? colors[theme.palette.mode].blue[800]
-                  : colors[theme.palette.mode].blue[300],
+              backgroundColor: colors[theme.palette.mode].blue[1000],
               cursor: 'pointer',
               position: 'absolute',
               zIndex: 100,

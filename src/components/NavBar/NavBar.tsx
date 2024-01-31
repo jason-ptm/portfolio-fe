@@ -1,5 +1,6 @@
 import {
   Box,
+  Stack,
   Switch,
   SxProps,
   Typography,
@@ -8,12 +9,13 @@ import {
   useTheme,
 } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
 import { ContentLimitator } from '..';
+import { ColorModeContext } from '../../utils';
 import * as colors from '../../utils/constants/colors.json';
 import { routes } from '../../utils/constants/routes';
 import './style/index.css';
-import { ColorModeContext } from '../../utils';
 
 interface INavBarProps {}
 
@@ -82,7 +84,11 @@ export const NavBarItemLink: React.FC<NavBarItemLinkProps> = ({
   const theme = useTheme();
 
   return (
-    <Typography variant="h6" fontWeight={500}>
+    <Typography
+      variant="h6"
+      fontWeight={500}
+      sx={{ display: 'flex', alignItems: 'center' }}
+    >
       <NavLink
         to={link}
         className="navlink"
@@ -90,7 +96,7 @@ export const NavBarItemLink: React.FC<NavBarItemLinkProps> = ({
           textDecoration: 'none',
           color: isActive
             ? theme.palette.primary.main
-            : colors[theme.palette.mode].black[800],
+            : colors[theme.palette.mode].black[900],
           transition: 'all 1s',
         })}
       >
@@ -152,12 +158,14 @@ export const NavBarMenuItem: React.FC<NavBarMenuItemProps> = ({
 };
 
 const NavBar: React.FC<INavBarProps> = () => {
-  const menuQuery = useMediaQuery('(max-width: 750px)');
+  const menuQuery = useMediaQuery('(max-width: 950px)');
   const theme = useTheme();
   const location = useLocation();
   const colorMode = useContext(ColorModeContext);
+  const { t, i18n } = useTranslation();
   const [showBackground, setShowBackground] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
+  const [lang, setLang] = useState(i18n.language);
 
   useEffect(() => {
     const scrollListener = () => {
@@ -173,6 +181,10 @@ const NavBar: React.FC<INavBarProps> = () => {
   useEffect(() => {
     if (menuQuery) setOpen(false);
   }, [menuQuery, location]);
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang]);
 
   const getMenuStyles: SxProps = () => {
     return menuQuery
@@ -262,15 +274,24 @@ const NavBar: React.FC<INavBarProps> = () => {
               <NavBarItemLink
                 key={route.slug}
                 link={route.label}
-                label={route.label}
+                label={t(`navBar.${route.label}`)}
               />
             ))}
             <MaterialUISwitch
               sx={{ m: 1 }}
               theme={theme}
               onClick={() => colorMode.toggleColorMode()}
-              defaultChecked
+              checked={theme.palette.mode === 'dark'}
             />
+            <Stack direction="row" spacing={1} alignItems="center">
+              <Typography>{t('navBar.english')}</Typography>
+              <Switch
+                color="primary"
+                checked={lang === 'es'}
+                onClick={() => setLang((prev) => (prev === 'es' ? 'en' : 'es'))}
+              />
+              <Typography>{t('navBar.spanish')}</Typography>
+            </Stack>
           </Box>
         </Box>
       </ContentLimitator>

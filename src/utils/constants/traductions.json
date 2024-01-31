@@ -1,0 +1,40 @@
+{
+  "es": {
+    "translation": {
+      "navBar": {
+        "home": "Inicio",
+        "about": "Sobre mi",
+        "studies": "Estudios",
+        "knowledge": "Conocimiento",
+        "projects": "Proyectos",
+        "english": "English",
+        "spanish": "Español"
+      },
+      "welcome": {
+        "title1": "Hola! soy",
+        "title2": "Jason Solarte",
+        "title3": "Soy desarrollador",
+        "professions": ["front-end.", "back-end.", "full-stack."]
+      }
+    }
+  },
+  "en": {
+    "translation": {
+      "navBar": {
+        "home": "Home",
+        "about": "About me",
+        "studies": "Studies",
+        "knowledge": "Knowledge",
+        "projects": "Projects",
+        "english": "English",
+        "spanish": "Español"
+      },
+      "welcome": {
+        "title1": "Hey! i am",
+        "title2": "Jason Solarte",
+        "title3": "I work in",
+        "professions": ["front-end.", "back-end.", "full-stack."]
+      }
+    }
+  }
+}
