@@ -60,6 +60,7 @@ export const themeSettings = (mode: 'dark' | 'light'): ThemeOptions => {
         'sans-serif',
         'Sixtyfour',
         'IBM Plex Sans',
+        'Caveat',
       ].join(','),
     },
   };
