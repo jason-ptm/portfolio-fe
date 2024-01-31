@@ -1,26 +1,21 @@
 export const routes = {
   home: {
-	label: 'home',
+    label: 'home',
     slug: '#home',
     absolutePath: '/#home',
   },
   about: {
-	label: 'about',
+    label: 'about',
     slug: '#about',
     absolutePath: '/#about',
   },
-  studies: {
-	label: 'studies',
-    slug: '#studies',
-    absolutePath: '/#studies',
-  },
-  knowledge: {
-	label: 'knowledge',
-    slug: '#knowledge',
-    absolutePath: '/#knowledge',
+  resume: {
+    label: 'resume',
+    slug: '#resume',
+    absolutePath: '/#resume',
   },
   projects: {
-	label: 'projects',
+    label: 'projects',
     slug: '#projects',
     absolutePath: '/#projects',
   },
