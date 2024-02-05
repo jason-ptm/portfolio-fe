@@ -5,7 +5,7 @@ import './App.css';
 import { NavBar } from './components';
 import { ColorModeContext, useMode } from './utils';
 import './utils/TraductionsService';
-import { AboutMe, Welcome } from './views';
+import { AboutMe, Resume, Welcome } from './views';
 
 function App() {
   const { theme, colorMode } = useMode();
@@ -20,6 +20,7 @@ function App() {
               <NavBar />
               <Welcome />
               <AboutMe />
+              <Resume />
             </BrowserRouter>
           </ThemeProvider>
         </ColorModeContext.Provider>
