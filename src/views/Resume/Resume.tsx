@@ -1,6 +1,6 @@
 import ArticleIcon from '@mui/icons-material/Article';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ContentLimitator, ItemLayout } from '../../components';
@@ -10,6 +10,7 @@ import './style/index.css';
 import LogoCisco from '../../assets/logos/logo-cisco.png';
 import LogoCoursera from '../../assets/logos/logo-coursera.png';
 import LogoGoogle from '../../assets/logos/logo-google.png';
+import LogoSena from '../../assets/logos/logo-sena.png';
 import LogoUd from '../../assets/logos/logo-ud.png';
 
 interface IResumeProps {}
@@ -36,6 +37,7 @@ interface ItemSection {
 const Menu: React.FC = () => {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
+  const useMedia = useMediaQuery('(max-width: 589px)');
   const [items, setItems] = useState(
     t('resume.sections', { returnObjects: true }) as ISection[]
   );
@@ -48,29 +50,57 @@ const Menu: React.FC = () => {
   }, [i18n.language]);
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-      {items.map((item) => (
+    <Box
+      sx={{
+        height: 'auto',
+        minHeight: '100px',
+        flexBasis: '150px',
+        position: 'relative',
+      }}
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: '100%',
+          width: '100%',
+        }}
+      >
         <Box
-          key={item.label}
-          color={
-            selectedOption === item.label ? theme.palette.primary.main : ''
-          }
           sx={{
-            cursor: 'pointer',
-            transition: 'all 1s',
+            width: '100%',
             display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
+            flexDirection: 'column',
             gap: '8px',
+            position: !useMedia ? 'sticky' : 'static',
+            height: '200px',
           }}
-          onClick={() => setSelectedOption(item.label)}
         >
-          {selectedOption === item.label && <HorizontalRuleIcon />}
-          <Typography variant="h6" fontWeight={600}>
-            {item.title}
-          </Typography>
+          {items.map((item) => (
+            <Box
+              key={item.label}
+              color={
+                selectedOption === item.label ? theme.palette.primary.main : ''
+              }
+              sx={{
+                cursor: 'pointer',
+                transition: 'all 1s',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: '8px',
+              }}
+              onClick={() => setSelectedOption(item.label)}
+            >
+              {selectedOption === item.label && <HorizontalRuleIcon />}
+              <Typography variant="h6" fontWeight={600}>
+                {item.title}
+              </Typography>
+            </Box>
+          ))}
         </Box>
-      ))}
+      </Box>
     </Box>
   );
 };
@@ -80,6 +110,8 @@ const SectionView: React.FC<ISectionProps> = ({ section }) => {
     switch (key) {
       case 'ud':
         return <img src={LogoUd} width={40} height={40} />;
+      case 'sena':
+        return <img src={LogoSena} width={40} height={40} />;
       case 'cisco':
         return (
           <img
@@ -140,6 +172,7 @@ const Resume: React.FC<IResumeProps> = () => {
       <ContentLimitator>
         <Box
           sx={{
+            height: '100%',
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap',
@@ -151,7 +184,7 @@ const Resume: React.FC<IResumeProps> = () => {
           <Box
             sx={{
               flexGrow: 1,
-              flexBasis: '300px',
+              flexBasis: '350px',
               maxWidth: '850px',
               display: 'flex',
               flexDirection: 'column',
