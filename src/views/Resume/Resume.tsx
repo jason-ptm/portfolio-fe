@@ -3,7 +3,8 @@ import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ContentLimitator, ItemLayout } from '../../components';
+import { ContentLimitator, ItemLayout, ItemsContainer } from '../../components';
+import { ISection } from '../../model/Resume';
 import './style/index.css';
 
 // images
@@ -17,21 +18,6 @@ interface IResumeProps {}
 
 interface ISectionProps {
   section: ISection;
-}
-
-interface ISection {
-  label: string;
-  title: string;
-  items: ItemSection[];
-}
-
-interface ItemSection {
-  icon?: string;
-  startDate: string;
-  endDate?: string;
-  title: string;
-  subtitle: string;
-  text: string;
 }
 
 const Menu: React.FC = () => {
@@ -191,9 +177,40 @@ const Resume: React.FC<IResumeProps> = () => {
               gap: '150px',
             }}
           >
-            {sections.map((section) => (
-              <SectionView key={section.label} section={section} />
-            ))}
+            {sections.map((section) =>
+              section.label === 'skills' ? (
+                <Box>
+                  <Typography
+                    variant="h4"
+                    fontWeight={800}
+                    sx={{ marginBottom: '25px' }}
+                  >
+                    {section.title}
+                  </Typography>
+                  <Box
+                    key={section.label}
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      flexWrap: 'wrap',
+                      justifyContent: 'space-between',
+                      gap: '40px',
+                    }}
+                  >
+                    {section.items.map((sectionItems) => (
+                      <ItemsContainer
+                        key={sectionItems.title}
+                        title={sectionItems.title}
+                        items={sectionItems.items}
+                        color={sectionItems.color ? sectionItems.color : ''}
+                      />
+                    ))}
+                  </Box>
+                </Box>
+              ) : (
+                <SectionView key={section.label} section={section} />
+              )
+            )}
           </Box>
         </Box>
       </ContentLimitator>

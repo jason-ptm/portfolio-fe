@@ -98,7 +98,91 @@
           {
             "label": "skills",
             "title": "Habilidades",
-            "items": []
+            "items": [
+              {
+                "title": "Habilidades principales",
+                "color": "blue",
+                "items": [
+                  {
+                    "label": "ReactJs",
+                    "icon": "react"
+                  },
+                  {
+                    "label": "JavaScript",
+                    "icon": "js"
+                  },
+
+                  {
+                    "label": "HTML5",
+                    "icon": "html"
+                  },
+                  {
+                    "label": "CSS3",
+                    "icon": "css"
+                  },
+                  {
+                    "label": "Ingles B2",
+                    "icon": "lang"
+                  },
+                  {
+                    "label": "Español nativo",
+                    "icon": "flag"
+                  }
+                ]
+              },
+              {
+                "title": "Desarrollo",
+                "color": "red",
+                "items": [
+                  {
+                    "label": "React Native",
+                    "icon": "react"
+                  },
+                  {
+                    "label": "SQL",
+                    "icon": "sql"
+                  },
+                  {
+                    "label": "NodeJs",
+                    "icon": "node"
+                  },
+                  {
+                    "label": "Git",
+                    "icon": "git"
+                  },
+                  {
+                    "label": "GitHub",
+                    "icon": "github"
+                  },
+                  {
+                    "label": "BitBucket",
+                    "icon": "bitbucket"
+                  },
+                  {
+                    "label": "WordPress",
+                    "icon": "word"
+                  }
+                ]
+              },
+              {
+                "title": "Plataformas",
+                "color": "green",
+                "items": [
+                  {
+                    "label": "Jira",
+                    "icon": "jira"
+                  },
+                  {
+                    "label": "Slack",
+                    "icon": "slack"
+                  },
+                  {
+                    "label": "Figma",
+                    "icon": "figma"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
@@ -203,7 +287,91 @@
           {
             "label": "skills",
             "title": "Skills",
-            "items": []
+            "items": [
+              {
+                "title": "Main skills",
+                "color": "blue",
+                "items": [
+                  {
+                    "label": "ReactJs",
+                    "icon": "react"
+                  },
+                  {
+                    "label": "JavaScript",
+                    "icon": "js"
+                  },
+
+                  {
+                    "label": "HTML5",
+                    "icon": "html"
+                  },
+                  {
+                    "label": "CSS3",
+                    "icon": "css"
+                  },
+                  {
+                    "label": "English B2",
+                    "icon": "lang"
+                  },
+                  {
+                    "label": "Native Spanish",
+                    "icon": "flag"
+                  }
+                ]
+              },
+              {
+                "title": "Development skills",
+                "color": "red",
+                "items": [
+                  {
+                    "label": "React Native",
+                    "icon": "react"
+                  },
+                  {
+                    "label": "SQL",
+                    "icon": "sql"
+                  },
+                  {
+                    "label": "NodeJs",
+                    "icon": "node"
+                  },
+                  {
+                    "label": "Git",
+                    "icon": "git"
+                  },
+                  {
+                    "label": "GitHub",
+                    "icon": "github"
+                  },
+                  {
+                    "label": "BitBucket",
+                    "icon": "bitbucket"
+                  },
+                  {
+                    "label": "WordPress",
+                    "icon": "word"
+                  }
+                ]
+              },
+              {
+                "title": "Relevant plataforms",
+                "color": "green",
+                "items": [
+                  {
+                    "label": "Jira",
+                    "icon": "jira"
+                  },
+                  {
+                    "label": "Slack",
+                    "icon": "slack"
+                  },
+                  {
+                    "label": "Figma",
+                    "icon": "figma"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
