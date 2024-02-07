@@ -179,7 +179,7 @@ const Resume: React.FC<IResumeProps> = () => {
           >
             {sections.map((section) =>
               section.label === 'skills' ? (
-                <Box>
+                <Box key={section.label}>
                   <Typography
                     variant="h4"
                     fontWeight={800}
@@ -188,7 +188,6 @@ const Resume: React.FC<IResumeProps> = () => {
                     {section.title}
                   </Typography>
                   <Box
-                    key={section.label}
                     sx={{
                       display: 'flex',
                       flexDirection: 'row',
