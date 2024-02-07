@@ -17,7 +17,6 @@ const ContentLimitator: React.FC<IContentLimitatorProps> = ({
         height: '100%',
         padding: '0 30px',
         maxWidth: maxWidth ? maxWidth : '1230px',
-        overflow: 'hidden',
       }}
     >
       {children}

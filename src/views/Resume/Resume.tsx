@@ -46,46 +46,37 @@ const Menu: React.FC = () => {
     >
       <Box
         sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          height: '100%',
+          height: '200px',
           width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+          position: !useMedia ? 'sticky' : 'static',
+          top: 100,
         }}
       >
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px',
-            position: !useMedia ? 'sticky' : 'static',
-            height: '200px',
-          }}
-        >
-          {items.map((item) => (
-            <Box
-              key={item.label}
-              color={
-                selectedOption === item.label ? theme.palette.primary.main : ''
-              }
-              sx={{
-                cursor: 'pointer',
-                transition: 'all 1s',
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-              onClick={() => setSelectedOption(item.label)}
-            >
-              {selectedOption === item.label && <HorizontalRuleIcon />}
-              <Typography variant="h6" fontWeight={600}>
-                {item.title}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
+        {items.map((item) => (
+          <Box
+            key={item.label}
+            color={
+              selectedOption === item.label ? theme.palette.primary.main : ''
+            }
+            sx={{
+              cursor: 'pointer',
+              transition: 'all 1s',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+            onClick={() => setSelectedOption(item.label)}
+          >
+            {selectedOption === item.label && <HorizontalRuleIcon />}
+            <Typography variant="h6" fontWeight={600}>
+              {item.title}
+            </Typography>
+          </Box>
+        ))}
       </Box>
     </Box>
   );
