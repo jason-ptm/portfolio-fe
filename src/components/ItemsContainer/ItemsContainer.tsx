@@ -263,7 +263,7 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         boxShadow: 3,
         borderRadius: '8px',
         overflow: 'hidden',
-        flexBasis: '200px',
+        flexBasis: '250px',
         flexGrow: 1,
         display: 'flex',
         flexDirection: 'column',
