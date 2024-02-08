@@ -35,6 +35,7 @@ const Tools: React.FC<IToolsProps> = () => {
           cursor: 'pointer',
           bottom: '20px',
           left: '30px',
+          zIndex: 3000,
         }}
         onClick={() => colorMode.toggleColorMode()}
       >
@@ -55,6 +56,7 @@ const Tools: React.FC<IToolsProps> = () => {
           justifyContent: 'center',
           alignItems: 'center',
           gap: '4px',
+          zIndex: 3000,
         }}
         onClick={() => {
           i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
@@ -66,7 +68,12 @@ const Tools: React.FC<IToolsProps> = () => {
           src={!(i18n.language === 'es') ? SpainFlag : UsaFlag}
           width={20}
           height={10}
-          style={{ objectFit: 'contain' }}
+          style={{
+            objectFit: 'contain',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
         />
         <Typography fontWeight={900} fontSize={18}>
           {i18n.language === 'es' ? 'EN' : 'ES'}
