@@ -3,7 +3,7 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import { Box, Typography, useTheme } from '@mui/material';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ColorModeContext } from '../../utils';
+import { ColorModeContext, StorageService } from '../../utils';
 import * as colors from '../../utils/constants/colors.json';
 import './style/index.css';
 
@@ -55,12 +55,13 @@ const Tools: React.FC<IToolsProps> = () => {
           alignItems: 'center',
           gap: '4px',
         }}
-        onClick={() =>
-          i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es')
-        }
+        onClick={() => {
+          i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
+          StorageService.setLang(i18n.language);
+        }}
       >
         <img
-          src={i18n.language === 'es' ? SpainFlag : UsaFlag}
+          src={!(i18n.language === 'es') ? SpainFlag : UsaFlag}
           width={20}
           height={10}
           style={{ objectFit: 'contain' }}
