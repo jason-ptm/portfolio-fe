@@ -9,26 +9,9 @@ import {
   useTheme,
 } from '@mui/material';
 import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Item } from '..';
 import { ISkillsSection } from '../../model/Resume';
 import './style/index.css';
-
-// images
-import LogoBitbucket from './../../assets/logos/logo-bitbucket.png';
-import LogoCss from './../../assets/logos/logo-css.png';
-import LogoFigma from './../../assets/logos/logo-figma.png';
-import LogoGit from './../../assets/logos/logo-git.png';
-import LogoGithub from './../../assets/logos/logo-github.png';
-import LogoHtml from './../../assets/logos/logo-html.png';
-import LogoJira from './../../assets/logos/logo-jira.png';
-import LogoJs from './../../assets/logos/logo-js.png';
-import LogoLang from './../../assets/logos/logo-lang.png';
-import LogoNode from './../../assets/logos/logo-node.png';
-import LogoReact from './../../assets/logos/logo-react.png';
-import LogoSlack from './../../assets/logos/logo-slack.png';
-import ColombiaFlag from './../../assets/logos/logo-spanish.png';
-import LogoSql from './../../assets/logos/logo-sql.png';
-import LogoWordpress from './../../assets/logos/logo-wordpress.png';
 
 interface IItemsContainerProps {
   title: string;
@@ -100,163 +83,6 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
   items,
   color,
 }) => {
-  const getItemIcon = (icon: string) => {
-    switch (icon) {
-      case 'bitbucket':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoBitbucket}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'flag':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={ColombiaFlag}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'css':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoCss}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'js':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoJs}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'figma':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoFigma}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'git':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoGit}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'github':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoGithub}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'html':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoHtml}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'jira':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoJira}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'lang':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoLang}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'node':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoNode}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'sql':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoSql}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'react':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoReact}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'slack':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoSlack}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      case 'word':
-        return (
-          <LazyLoadImage
-            effect="blur"
-            src={LogoWordpress}
-            width={30}
-            height={30}
-            style={{ objectFit: 'contain' }}
-          />
-        );
-      default:
-        return <></>;
-    }
-  };
-
   return (
     <Box
       sx={{
@@ -285,7 +111,9 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
           {items?.map((item) => (
             <ListItem key={item.label}>
               <ListItemButton sx={{ borderRadius: '4px' }}>
-                <ListItemIcon>{getItemIcon(item.icon)}</ListItemIcon>
+                <ListItemIcon>
+                  {<Item size={30} icon={item.icon} />}
+                </ListItemIcon>
                 <ListItemText
                   primary={<Typography align="center">{item.label}</Typography>}
                 />

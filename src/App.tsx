@@ -1,11 +1,11 @@
-import { Box, CssBaseline, ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { NavBar, Tools } from './components';
 import { ColorModeContext, useMode } from './utils';
 import './utils/TraductionsService';
-import { AboutMe, Resume, Welcome } from './views';
+import { AboutMe, Projects, Resume, Welcome } from './views';
 
 function App() {
   const { theme, colorMode } = useMode();
@@ -22,7 +22,7 @@ function App() {
               <Welcome />
               <AboutMe />
               <Resume />
-              <Box sx={{ height: '1000px' }}></Box>
+              <Projects />
             </BrowserRouter>
           </ThemeProvider>
         </ColorModeContext.Provider>

@@ -185,6 +185,54 @@
             ]
           }
         ]
+      },
+      "projects": {
+        "title": "Proyectos",
+        "description": "Aquí tienes una selección de proyectos sobresalientes en los que he trabajado, aportando mi experiencia y dedicación.",
+        "items": [
+          {
+            "icon": "holper",
+            "title": "Aplicación móvil Holper",
+            "shortDescription": "Desarrollo de Holper, colaborando con un equipo interno en la integración de un servicio Prime y la implementación de nuevas vistas relacionadas.",
+            "longDescription": "Holper fue un proyecto centrado en el desarrollo de una aplicación móvil para contratar servicios de limpieza. Colaboré estrechamente con el equipo interno de desarrollo, adaptando la aplicación para incluir un servicio Prime. El desafío principal fue el manejo de tecnologías, ya que la aplicación utilizaba React Native, lo que implicó aprender las diferencias entre ReactJS y React Native sobre la marcha. El equipo de desarrollo brindó apoyo en la resolución de dudas y mejoras. Otro desafío fue alinear mi trabajo con la visión a futuro del equipo, superando obstáculos al optar por soluciones más complejas y sostenibles. Mi rol se centró en agregar y modificar vistas relacionadas con el servicio Prime, consumiendo API's para su funcionalidad.",
+            "date": "Agosto 2023 - Diciembre 2023",
+            "technologies": ["react"],
+            "challenges": [
+              "Manejo de tecnologías React Native y adaptación a nuevas prácticas.",
+              "Alineación con la visión a futuro del equipo y adaptación a cambios inesperados.",
+              "Reinvención de soluciones ante cambios en la dirección del proyecto."
+            ],
+            "rol": "Me responsabilicé de agregar nuevas vistas relacionadas con el servicio Prime, modificando existentes y asegurando su funcionalidad mediante la integración de API's."
+          },
+          {
+            "icon": "yms",
+            "title": "YMS - Sistema de Gestión de Yates",
+            "shortDescription": "Desarrollo de un sistema de gestión, destacando la adaptación de plantillas de diseño y la implementación de lógica funcional.",
+            "longDescription": "YMS fue un proyecto integral de gestión de yates. Mi principal desafío fue la gestión eficiente del tiempo, ya que me uní al proyecto en una etapa avanzada y se me exigió trabajar en plazos más cortos de lo habitual. Mi labor se centró en adaptar plantillas de diseño desde Figma, utilizando componentes definidos y corrigiendo vistas según los requisitos. Luego, implementé la lógica necesaria para hacer funcionales estas vistas mediante la integración de API's y servicios.",
+            "date": "Noviembre 2023 - Enero 2024",
+            "technologies": ["react", "aws", "nest", "docker"],
+            "challenges": [
+              "Gestión eficiente del tiempo debido a plazos ajustados.",
+              "Adaptación rápida a un proyecto en una etapa media-final.",
+              "Sacrificio personal para cumplir con plazos más exigentes."
+            ],
+            "rol": "Me encargué de adaptar plantillas de diseño, corregir vistas y aplicar la lógica funcional necesaria para hacer operativos los aspectos clave del sistema de gestión de yates."
+          },
+          {
+            "icon": "sapiolab",
+            "title": "SapioLab - Sistema de Gestión Académica",
+            "shortDescription": "Desarrollo de un sistema de gestión académica complejo con plataformas administrativa y de clientes.",
+            "longDescription": "SapioLab fue un proyecto abarcador de gestión académica con plataformas administrativa y de clientes. El mayor desafío fue la complejidad del sistema, ya que no se planificó inicialmente, requiriendo una comprensión progresiva durante el desarrollo. Mi labor inicial consistió en la maquetación de secciones de la plataforma administrativa, creando plantillas y estructuras visuales. También participé en la resolución de errores post-pruebas QA, abordando desde cambios de formato hasta mejoras en procesos para satisfacer las expectativas del cliente.",
+            "date": "Agosto 2023 - Enero 2024",
+            "technologies": ["react", "aws", "nest", "docker"],
+            "challenges": [
+              "Enfrentar la complejidad del sistema sin una planificación inicial.",
+              "Aprender sobre la marcha para comprender a fondo el funcionamiento del sistema.",
+              "Adaptación a los cambios requeridos por el cliente durante la fase de QA."
+            ],
+            "rol": "Desempeñé un papel fundamental en la maquetación de secciones y la solución de errores post-pruebas QA, mejorando continuamente la plataforma administrativa para cumplir con las expectativas del cliente."
+          }
+        ]
       }
     }
   },
@@ -372,6 +420,54 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "Here u have a selection of outstanding projects that i have worked on, contributing my experience and dedication.",
+        "items": [
+          {
+            "icon": "holper",
+            "title": "Holper Mobile App",
+            "shortDescription": "Development of Holper, collaborating with an internal team in the integration of a Prime service and the implementation of new related views.",
+            "longDescription": "Holper was a project focused on developing a mobile app for hiring cleaning services. I worked closely with the in-house development team, adapting the app to include a Prime service. The main challenge was handling technologies, as the app used React Native, requiring me to learn on the fly the differences between ReactJS and React Native. The development team provided support in resolving doubts and making improvements. Another challenge was aligning my work with the team's future vision, overcoming obstacles by opting for more complex and sustainable solutions. My role centered on adding and modifying views related to the Prime service, consuming APIs for functionality.",
+            "date": "August 2023 - December 2023",
+            "technologies": ["react"],
+            "challenges": [
+              "Handling React Native technologies and adapting to new practices.",
+              "Aligning with the team's future vision and adapting to unexpected changes.",
+              "Reinventing solutions in response to changes in the project direction."
+            ],
+            "role": "I was responsible for adding new views related to the Prime service, modifying existing ones, and ensuring their functionality through API integration."
+          },
+          {
+            "icon": "yms",
+            "title": "YMS - Yacht Management System",
+            "shortDescription": "Development of a management system, emphasizing the adaptation of design templates and the implementation of functional logic.",
+            "longDescription": "YMS was a comprehensive project for yacht management. My main challenge was efficient time management, as I joined the project at an advanced stage and was required to work on shorter timelines than usual. My role focused on adapting design templates from Figma, using defined components, and correcting views according to requirements. Subsequently, I implemented the necessary logic to make these views functional through the integration of APIs and services.",
+            "date": "November 2023 - January 2024",
+            "technologies": ["react", "aws", "nest", "docker"],
+            "challenges": [
+              "Efficient time management due to tight deadlines.",
+              "Quick adaptation to a project in a mid-to-final stage.",
+              "Personal sacrifice to meet more demanding deadlines."
+            ],
+            "role": "I was in charge of adapting design templates, correcting views, and implementing the necessary functional logic to make key aspects of the yacht management system operational."
+          },
+          {
+            "icon": "sapiolab",
+            "title": "SapioLab - Academic Management System",
+            "shortDescription": "Development of a complex academic management system with administrative and client platforms.",
+            "longDescription": "SapioLab was a comprehensive academic management project with administrative and client platforms. The main challenge was the complexity of the system, as it was not initially planned, requiring a progressive understanding during development. My initial task involved the layout of sections in the administrative platform, creating templates and visual structures. I also participated in resolving post-QA testing errors, addressing everything from date format changes to process improvements to meet client expectations.",
+            "date": "August 2023 - January 2024",
+            "technologies": ["react", "aws", "nest", "docker"],
+            "challenges": [
+              "Facing the complexity of the system without initial planning.",
+              "Learning on the fly to thoroughly understand the system's operation.",
+              "Adapting to changes required by the client during the QA phase."
+            ],
+            "role": "I played a crucial role in the layout of sections and the resolution of post-QA testing errors, continually improving the administrative platform to meet client expectations."
           }
         ]
       }
