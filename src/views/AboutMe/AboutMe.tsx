@@ -2,6 +2,7 @@ import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined
 import { Box, Typography, useTheme } from '@mui/material';
 import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import AboutImage from '../../assets/about-me.png';
 import { ContentLimitator } from '../../components';
 import colors from '../../utils/constants/colors.json';
@@ -64,7 +65,8 @@ const AboutMe: React.FC<IAboutMeProps> = () => {
             gap: '30px',
           }}
         >
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={AboutImage}
             style={{
               overflow: 'hidden',

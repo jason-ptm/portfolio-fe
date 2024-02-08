@@ -3,6 +3,7 @@ import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { ContentLimitator, ItemLayout, ItemsContainer } from '../../components';
 import { ISection } from '../../model/Resume';
 import './style/index.css';
@@ -86,12 +87,17 @@ const SectionView: React.FC<ISectionProps> = ({ section }) => {
   const getIconOrganization = (key?: string) => {
     switch (key) {
       case 'ud':
-        return <img src={LogoUd} width={40} height={40} />;
+        return (
+          <LazyLoadImage effect="blur" src={LogoUd} width={40} height={40} />
+        );
       case 'sena':
-        return <img src={LogoSena} width={40} height={40} />;
+        return (
+          <LazyLoadImage effect="blur" src={LogoSena} width={40} height={40} />
+        );
       case 'cisco':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoCisco}
             width={30}
             height={30}
@@ -99,10 +105,18 @@ const SectionView: React.FC<ISectionProps> = ({ section }) => {
           />
         );
       case 'google':
-        return <img src={LogoGoogle} width={30} height={30} />;
+        return (
+          <LazyLoadImage
+            effect="blur"
+            src={LogoGoogle}
+            width={30}
+            height={30}
+          />
+        );
       case 'coursera':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoCoursera}
             width={40}
             height={40}

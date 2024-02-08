@@ -9,6 +9,7 @@ import {
   useTheme,
 } from '@mui/material';
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { ISkillsSection } from '../../model/Resume';
 import './style/index.css';
 
@@ -23,11 +24,11 @@ import LogoJira from './../../assets/logos/logo-jira.png';
 import LogoJs from './../../assets/logos/logo-js.png';
 import LogoLang from './../../assets/logos/logo-lang.png';
 import LogoNode from './../../assets/logos/logo-node.png';
-import LogoSql from './../../assets/logos/logo-sql.png';
 import LogoReact from './../../assets/logos/logo-react.png';
 import LogoSlack from './../../assets/logos/logo-slack.png';
-import LogoWordpress from './../../assets/logos/logo-wordpress.png';
 import ColombiaFlag from './../../assets/logos/logo-spanish.png';
+import LogoSql from './../../assets/logos/logo-sql.png';
+import LogoWordpress from './../../assets/logos/logo-wordpress.png';
 
 interface IItemsContainerProps {
   title: string;
@@ -103,7 +104,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
     switch (icon) {
       case 'bitbucket':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoBitbucket}
             width={30}
             height={30}
@@ -112,7 +114,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'flag':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={ColombiaFlag}
             width={30}
             height={30}
@@ -121,7 +124,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'css':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoCss}
             width={30}
             height={30}
@@ -130,7 +134,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'js':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoJs}
             width={30}
             height={30}
@@ -139,7 +144,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'figma':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoFigma}
             width={30}
             height={30}
@@ -148,7 +154,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'git':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoGit}
             width={30}
             height={30}
@@ -157,7 +164,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'github':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoGithub}
             width={30}
             height={30}
@@ -166,7 +174,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'html':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoHtml}
             width={30}
             height={30}
@@ -175,7 +184,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'jira':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoJira}
             width={30}
             height={30}
@@ -184,7 +194,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'lang':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoLang}
             width={30}
             height={30}
@@ -193,7 +204,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'node':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoNode}
             width={30}
             height={30}
@@ -202,7 +214,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'sql':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoSql}
             width={30}
             height={30}
@@ -211,7 +224,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'react':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoReact}
             width={30}
             height={30}
@@ -220,7 +234,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'slack':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoSlack}
             width={30}
             height={30}
@@ -229,7 +244,8 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
         );
       case 'word':
         return (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={LogoWordpress}
             width={30}
             height={30}

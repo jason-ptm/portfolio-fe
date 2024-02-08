@@ -3,6 +3,7 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import { Box, Typography, useTheme } from '@mui/material';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { ColorModeContext, StorageService } from '../../utils';
 import * as colors from '../../utils/constants/colors.json';
 import './style/index.css';
@@ -60,7 +61,8 @@ const Tools: React.FC<IToolsProps> = () => {
           StorageService.setLang(i18n.language);
         }}
       >
-        <img
+        <LazyLoadImage
+          effect="blur"
           src={!(i18n.language === 'es') ? SpainFlag : UsaFlag}
           width={20}
           height={10}
