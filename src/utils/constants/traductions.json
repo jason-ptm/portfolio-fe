@@ -233,7 +233,8 @@
             "rol": "Desempeñé un papel fundamental en la maquetación de secciones y la solución de errores post-pruebas QA, mejorando continuamente la plataforma administrativa para cumplir con las expectativas del cliente."
           }
         ]
-      }
+      },
+      "copied": "Elemento copiado"
     }
   },
   "en": {
@@ -470,7 +471,8 @@
             "role": "I played a crucial role in the layout of sections and the resolution of post-QA testing errors, continually improving the administrative platform to meet client expectations."
           }
         ]
-      }
+      },
+      "copied": "Element copied"
     }
   }
 }

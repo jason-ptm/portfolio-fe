@@ -5,7 +5,8 @@ import { Box, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import colors from '../../utils/constants/colors.json';
 import './style/index.css';
-import confis from '../../utils/constants/configs.json';
+import config from '../../utils/constants/configs.json';
+import CopyToClipboardButton from '../../components/CopyToClipBoard/CopyToClipBoard';
 
 interface IFooterProps {}
 
@@ -62,7 +63,7 @@ const Footer: React.FC<IFooterProps> = () => {
                 color: colors[theme.palette.mode].red[500],
               },
             }}
-            onClick={() => openInNewTab(confis.links.instagram)}
+            onClick={() => openInNewTab(config.links.instagram)}
           />
 
           <LinkedInIcon
@@ -75,7 +76,7 @@ const Footer: React.FC<IFooterProps> = () => {
                 color: colors[theme.palette.mode].blue[700],
               },
             }}
-            onClick={() => openInNewTab(confis.links.linkedin)}
+            onClick={() => openInNewTab(config.links.linkedin)}
           />
           <GitHubIcon
             fontSize="large"
@@ -88,7 +89,7 @@ const Footer: React.FC<IFooterProps> = () => {
                 color: colors[theme.palette.mode].blue[500],
               },
             }}
-            onClick={() => openInNewTab(confis.links.github)}
+            onClick={() => openInNewTab(config.links.github)}
           />
         </Box>
         <Box
@@ -110,14 +111,25 @@ const Footer: React.FC<IFooterProps> = () => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h3" fontFamily="Protest Guerrilla" sx={{marginBottom: '20px'}}>
+        <Typography
+          variant="h3"
+          fontFamily="Protest Guerrilla"
+          sx={{ marginBottom: '20px' }}
+        >
           SOLARTE
         </Typography>
+        <CopyToClipboardButton
+          label={config.mail}
+          textProperties={{
+            color: colors[theme.palette.mode].black[300],
+            sx: {
+              cursor: 'pointer',
+            },
+          }}
+          textToCopy={config.mail}
+        />
         <Typography color={colors[theme.palette.mode].black[300]}>
-          js.solarte29@gmail.com
-        </Typography>
-        <Typography color={colors[theme.palette.mode].black[300]}>
-          +57 318 819 6272
+          {config.phoneNumber}
         </Typography>
       </Box>
     </Box>
