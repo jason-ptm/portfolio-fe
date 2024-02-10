@@ -15,6 +15,12 @@ import './style/index.css';
 
 interface INavBarProps {}
 
+interface IRoute {
+  label?: string;
+  slug: string;
+  absolutePath: string;
+}
+
 interface NavBarItemLinkProps {
   link: string;
   label: string;
@@ -213,13 +219,17 @@ const NavBar: React.FC<INavBarProps> = () => {
           )}
 
           <Box sx={getMenuStyles('')}>
-            {Object.values(routes).map((route) => (
-              <NavBarItemLink
-                key={route.slug}
-                link={route.label}
-                label={t(`navBar.${route.label}`)}
-              />
-            ))}
+            {Object.values(routes).map((route: IRoute, index) =>
+              route?.label ? (
+                <NavBarItemLink
+                  key={index}
+                  link={route.label}
+                  label={t(`navBar.${route.label}`)}
+                />
+              ) : (
+                <></>
+              )
+            )}
           </Box>
         </Box>
       </ContentLimitator>
