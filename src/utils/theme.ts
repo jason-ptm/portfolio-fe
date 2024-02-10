@@ -61,6 +61,7 @@ export const themeSettings = (mode: 'dark' | 'light'): ThemeOptions => {
         'Sixtyfour',
         'IBM Plex Sans',
         'Caveat',
+        'Protest Guerrilla',
       ].join(','),
     },
   };

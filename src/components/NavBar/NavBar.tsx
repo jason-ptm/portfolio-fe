@@ -191,7 +191,7 @@ const NavBar: React.FC<INavBarProps> = () => {
           <Typography
             variant="h4"
             fontWeight={700}
-            fontFamily="IBM Plex Sans"
+            fontFamily="Protest Guerrilla"
             sx={{
               position: 'relative',
               zIndex: 5100,
