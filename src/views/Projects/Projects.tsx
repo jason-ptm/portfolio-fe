@@ -5,6 +5,7 @@ import { ContentLimitator, Item } from '../../components';
 import { IProject } from '../../model/Projects';
 import colors from '../../utils/constants/colors.json';
 import './style/index.css';
+import { darkModeKey } from '../../utils';
 
 interface IProjectsProps {}
 
@@ -18,7 +19,9 @@ const ProjectContainer: React.FC<IProjectContainerProps> = ({ project }) => {
   return (
     <Box
       sx={{
-        boxShadow: 3,
+        boxShadow: `0px 0px 12px 2px rgba(${
+          theme.palette.mode === darkModeKey ? '70,70,70' : '217,208,217'
+        },1)`,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -43,7 +46,7 @@ const ProjectContainer: React.FC<IProjectContainerProps> = ({ project }) => {
       <Divider
         orientation="horizontal"
         sx={{
-          width: '40px',
+          width: '50px',
           height: '1px',
           backgroundColor: colors[theme.palette.mode].blue[500],
         }}
@@ -88,7 +91,11 @@ const Projects: React.FC<IProjectsProps> = () => {
           fontSize={18}
           align="center"
           sx={{ marginTop: '30px' }}
-          color={colors[theme.palette.mode].black[400]}
+          color={
+            theme.palette.mode === darkModeKey
+              ? colors[theme.palette.mode].black[700]
+              : colors[theme.palette.mode].black[400]
+          }
         >
           {t('projects.description')}
         </Typography>
