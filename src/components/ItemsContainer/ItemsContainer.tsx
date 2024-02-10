@@ -11,7 +11,9 @@ import {
 import React from 'react';
 import { Item } from '..';
 import { ISkillsSection } from '../../model/Resume';
+import * as colors from '../../utils/constants/colors.json';
 import './style/index.css';
+import { darkModeKey } from '../../utils';
 
 interface IItemsContainerProps {
   title: string;
@@ -68,7 +70,11 @@ const ContainerHeader: React.FC<IContainerHeader> = ({ color, title }) => {
         <Typography
           variant="h4"
           align="center"
-          color={theme.palette.background.default}
+          color={
+            theme.palette.mode === darkModeKey
+              ? colors[theme.palette.mode].black[1000]
+              : colors[theme.palette.mode].black[100]
+          }
           fontWeight={700}
         >
           {title}
@@ -83,10 +89,13 @@ const ItemsContainer: React.FC<IItemsContainerProps> = ({
   items,
   color,
 }) => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
-        boxShadow: 3,
+        boxShadow: `0px 0px 12px 2px rgba(${
+          theme.palette.mode === darkModeKey ? '70,70,70' : '217,208,217'
+        },1)`,
         borderRadius: '8px',
         overflow: 'hidden',
         flexBasis: '250px',
