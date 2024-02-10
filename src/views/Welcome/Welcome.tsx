@@ -3,7 +3,6 @@ import { Box, Typography, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ContentLimitator } from '../../components';
-import { darkModeKey } from '../../utils';
 import * as colors from '../../utils/constants/colors.json';
 import './style/index.css';
 
