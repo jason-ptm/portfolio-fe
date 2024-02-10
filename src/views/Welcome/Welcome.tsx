@@ -66,11 +66,7 @@ export const Background: React.FC = () => {
       <Box
         sx={{
           flex: '1',
-
-          backgroundColor:
-            theme.palette.mode === darkModeKey
-              ? colors[theme.palette.mode].blue[1000]
-              : colors[theme.palette.mode].blue[1000],
+          backgroundColor: colors[theme.palette.mode].blue[1000],
         }}
       />
       <Box sx={{ flex: '1' }} />
@@ -150,10 +146,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
               width: '100px',
               height: '100px',
               borderRadius: '50px',
-              backgroundColor:
-                theme.palette.mode === darkModeKey
-                  ? colors[theme.palette.mode].blue[1000]
-                  : colors[theme.palette.mode].blue[1000],
+              backgroundColor: colors[theme.palette.mode].blue[1000],
               cursor: 'pointer',
               position: 'absolute',
               zIndex: 100,
