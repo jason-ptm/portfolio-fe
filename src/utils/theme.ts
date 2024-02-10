@@ -3,8 +3,11 @@ import { createContext, useMemo, useState } from 'react';
 import { StorageService } from './';
 import * as colors from './constants/colors.json';
 
+export const darkModeKey = 'dark';
+export const lightModeKey = 'light';
+
 export const themeColorTokens = (mode: string) => ({
-  ...(mode === 'dark'
+  ...(mode === darkModeKey
     ? {
         ...colors.dark,
       }
@@ -19,21 +22,24 @@ export const themeSettings = (mode: 'dark' | 'light'): ThemeOptions => {
   return {
     palette: {
       mode: mode,
-      ...(mode === 'dark'
+      ...(mode === darkModeKey
         ? {
             primary: {
               main: colors.blue[600],
             },
             secondary: {
-              main: colors.black[1000],
+              main: colors.black[200],
             },
             neutral: {
-              dark: colors.black[900],
+              dark: colors.black[200],
               main: colors.black[800],
               light: colors.black[700],
             },
             background: {
               default: colors.black[100],
+            },
+            text: {
+              primary: colors.black[1000],
             },
           }
         : {
@@ -74,15 +80,17 @@ export const ColorModeContext = createContext({
 export const useMode = () => {
   const localStorageTheme = StorageService.getThemeMode();
   const [mode, setMode] = useState(
-    localStorageTheme ? localStorageTheme : 'light'
+    localStorageTheme ? localStorageTheme : lightModeKey
   );
 
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () =>
         setMode((prev) => {
-          StorageService.setThemeMode(prev === 'light' ? 'dark' : 'light');
-          return prev === 'light' ? 'dark' : 'light';
+          StorageService.setThemeMode(
+            prev === lightModeKey ? darkModeKey : lightModeKey
+          );
+          return prev === lightModeKey ? darkModeKey : lightModeKey;
         }),
     }),
     []

@@ -3,6 +3,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ContentLimitator } from '../../components';
+import { darkModeKey } from '../../utils';
 import * as colors from '../../utils/constants/colors.json';
 import './style/index.css';
 
@@ -65,7 +66,11 @@ export const Background: React.FC = () => {
       <Box
         sx={{
           flex: '1',
-          backgroundColor: colors[theme.palette.mode].blue[1000],
+
+          backgroundColor:
+            theme.palette.mode === darkModeKey
+              ? colors[theme.palette.mode].blue[1000]
+              : colors[theme.palette.mode].blue[1000],
         }}
       />
       <Box sx={{ flex: '1' }} />
@@ -145,7 +150,10 @@ const Welcome: React.FC<IWelcomeProps> = () => {
               width: '100px',
               height: '100px',
               borderRadius: '50px',
-              backgroundColor: colors[theme.palette.mode].blue[1000],
+              backgroundColor:
+                theme.palette.mode === darkModeKey
+                  ? colors[theme.palette.mode].blue[1000]
+                  : colors[theme.palette.mode].blue[1000],
               cursor: 'pointer',
               position: 'absolute',
               zIndex: 100,
