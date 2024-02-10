@@ -14,6 +14,7 @@ import LogoCoursera from '../../assets/logos/logo-coursera.png';
 import LogoGoogle from '../../assets/logos/logo-google.png';
 import LogoSena from '../../assets/logos/logo-sena.png';
 import LogoUd from '../../assets/logos/logo-ud.png';
+import { Link } from 'react-scroll';
 
 interface IResumeProps {}
 
@@ -70,12 +71,20 @@ const Menu: React.FC = () => {
               alignItems: 'center',
               gap: '8px',
             }}
-            onClick={() => setSelectedOption(item.label)}
           >
             {selectedOption === item.label && <HorizontalRuleIcon />}
-            <Typography variant="h6" fontWeight={600}>
-              {item.title}
-            </Typography>
+            <Link
+              spy={true}
+              to={item.label}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              onSetActive={(to) => setSelectedOption(to)}
+            >
+              <Typography variant="h6" fontWeight={600}>
+                {item.title}
+              </Typography>
+            </Link>
           </Box>
         ))}
       </Box>
@@ -129,7 +138,13 @@ const SectionView: React.FC<ISectionProps> = ({ section }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+      id={section.label}
+    >
       <Typography variant="h4" fontWeight={800}>
         {section.title}
       </Typography>
@@ -159,7 +174,10 @@ const Resume: React.FC<IResumeProps> = () => {
   }, [i18n.language]);
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center',paddingTop: '100px' }} id="resume">
+    <Box
+      sx={{ display: 'flex', justifyContent: 'center', paddingTop: '100px' }}
+      id="resume"
+    >
       <ContentLimitator>
         <Box
           sx={{
@@ -184,7 +202,7 @@ const Resume: React.FC<IResumeProps> = () => {
           >
             {sections.map((section) =>
               section.label === 'skills' ? (
-                <Box key={section.label}>
+                <Box key={section.label} id={section.label}>
                   <Typography
                     variant="h4"
                     fontWeight={800}
