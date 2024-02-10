@@ -51,6 +51,7 @@ export const Background: React.FC = () => {
   const theme = useTheme();
   return (
     <Box
+      id="home"
       sx={{
         width: '100vw',
         height: '100vh',

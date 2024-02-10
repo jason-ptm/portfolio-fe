@@ -159,7 +159,7 @@ const Resume: React.FC<IResumeProps> = () => {
   }, [i18n.language]);
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center',paddingTop: '100px' }} id="resume">
       <ContentLimitator>
         <Box
           sx={{

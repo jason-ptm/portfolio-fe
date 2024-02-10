@@ -76,11 +76,12 @@ const Projects: React.FC<IProjectsProps> = () => {
 
   return (
     <Box
+      id="projects"
       sx={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: '200px 0',
+        padding: '200px 0',
       }}
     >
       <ContentLimitator>

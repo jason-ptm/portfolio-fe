@@ -48,7 +48,10 @@ const AboutMe: React.FC<IAboutMeProps> = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box
+      sx={{ display: 'flex', justifyContent: 'center', padding: '100px 0 50px 0' }}
+      id="about"
+    >
       <ContentLimitator>
         <Box
           sx={{

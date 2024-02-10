@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import { ContentLimitator } from '..';
 import * as colors from '../../utils/constants/colors.json';
 import { routes } from '../../utils/constants/routes';
@@ -18,12 +18,13 @@ interface INavBarProps {}
 interface IRoute {
   label?: string;
   slug: string;
-  absolutePath: string;
+  offset: number;
 }
 
 interface NavBarItemLinkProps {
   link: string;
   label: string;
+  offset: number;
 }
 
 interface NavBarMenuItemProps {
@@ -35,6 +36,7 @@ interface NavBarMenuItemProps {
 export const NavBarItemLink: React.FC<NavBarItemLinkProps> = ({
   link,
   label,
+  offset,
 }) => {
   const theme = useTheme();
 
@@ -44,19 +46,21 @@ export const NavBarItemLink: React.FC<NavBarItemLinkProps> = ({
       fontWeight={500}
       sx={{ display: 'flex', alignItems: 'center' }}
     >
-      <NavLink
+      <Link
         to={link}
+        spy={true}
+        smooth={true}
+        offset={offset}
+        duration={500}
         className="navlink"
-        style={({ isActive }) => ({
+        activeStyle={{
           textDecoration: 'none',
-          color: isActive
-            ? theme.palette.primary.main
-            : colors[theme.palette.mode].black[900],
+          color: colors[theme.palette.mode].black[900],
           transition: 'all 1s',
-        })}
+        }}
       >
         {label}
-      </NavLink>
+      </Link>
     </Typography>
   );
 };
@@ -115,7 +119,6 @@ export const NavBarMenuItem: React.FC<NavBarMenuItemProps> = ({
 const NavBar: React.FC<INavBarProps> = () => {
   const menuQuery = useMediaQuery('(max-width: 950px)');
   const theme = useTheme();
-  const location = useLocation();
   const { t } = useTranslation();
   const [showBackground, setShowBackground] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
@@ -130,10 +133,6 @@ const NavBar: React.FC<INavBarProps> = () => {
 
     return () => window.removeEventListener('scroll', scrollListener);
   }, []);
-
-  useEffect(() => {
-    if (menuQuery) setOpen(false);
-  }, [menuQuery, location]);
 
   const getMenuStyles: SxProps = () => {
     return menuQuery
@@ -223,6 +222,7 @@ const NavBar: React.FC<INavBarProps> = () => {
               route?.label ? (
                 <NavBarItemLink
                   key={index}
+                  offset={route.offset}
                   link={route.label}
                   label={t(`navBar.${route.label}`)}
                 />

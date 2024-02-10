@@ -1,22 +1,22 @@
 export const routes = {
   home: {
     label: 'home',
-    slug: '#home',
-    absolutePath: '/#home',
+    slug: 'home',
+    offset: 0,
   },
   about: {
     label: 'about',
-    slug: '#about',
-    absolutePath: '/#about',
+    slug: 'about',
+    offset: 50,
   },
   resume: {
     label: 'resume',
-    slug: '#resume',
-    absolutePath: '/#resume',
+    slug: 'resume',
+    offset: 50,
   },
   projects: {
     label: 'projects',
-    slug: '#projects',
-    absolutePath: '/#projects',
+    slug: 'projects',
+    offset: 100,
   },
 };

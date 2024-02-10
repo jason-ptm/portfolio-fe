@@ -1,3 +1,6 @@
+.navlink {
+  cursor: pointer;
+}
 .navlink::after {
   display: block;
   content: '';
@@ -8,6 +11,7 @@
 
   transition: all 0.5s;
 }
-.active.navlink::after {
+.active.navlink::after,
+.navlink:hover::after {
   transform: scaleX(1);
 }
