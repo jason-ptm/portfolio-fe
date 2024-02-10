@@ -13,11 +13,10 @@ function App() {
   return (
     <>
       <Suspense fallback="loading">
-        <CssBaseline />
-
         <BrowserRouter>
           <ColorModeContext.Provider value={colorMode}>
             <ThemeProvider theme={theme}>
+              <CssBaseline />
               <Tools />
               <NavBar />
               <Welcome />
