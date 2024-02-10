@@ -1,5 +1,5 @@
 import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Button, Typography, useTheme } from '@mui/material';
 import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -15,11 +15,11 @@ interface IButtonsProps {
   icon: ReactNode;
 }
 
-const Button: React.FC<IButtonsProps> = ({ label, icon }) => {
+const CustomButton: React.FC<IButtonsProps> = ({ label, icon }) => {
   const theme = useTheme();
 
   return (
-    <Box
+    <Button
       sx={{
         cursor: 'pointer',
         display: 'flex',
@@ -29,20 +29,17 @@ const Button: React.FC<IButtonsProps> = ({ label, icon }) => {
         width: '250px',
         height: '50px',
         borderRadius: '4px',
-        border: `1.5px solid ${colors[theme.palette.mode].black[400]}`,
+        border: `1px solid ${colors[theme.palette.mode].black[200]}`,
         gap: '8px',
-        boxShadow: `8px 8px 0px 0px ${colors[theme.palette.mode].blue[500]}`,
-        transition: 'all 0.8s',
-        '&:hover': {
-          backgroundColor: `${colors[theme.palette.mode].blue[1000]}68`,
-        },
+        boxShadow: `4px 4px 0px 0px ${colors[theme.palette.mode].blue[600]}`,
+        color: colors[theme.palette.mode].black[900],
       }}
     >
-      <Typography align="center" fontFamily="Inter" fontWeight={300}>
+      <Typography align="center" fontFamily="Inter" fontWeight={500}>
         {label}
       </Typography>
       {icon}
-    </Box>
+    </Button>
   );
 };
 
@@ -102,7 +99,7 @@ const AboutMe: React.FC<IAboutMeProps> = () => {
             <Typography variant="h6" fontWeight={300}>
               {t('about.text2')}
             </Typography>
-            <Button
+            <CustomButton
               label={t('about.cv')}
               icon={<CloudDownloadOutlinedIcon />}
             />
