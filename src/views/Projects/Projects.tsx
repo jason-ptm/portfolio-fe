@@ -1,7 +1,6 @@
 import { Box, Divider, Typography, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { ContentLimitator, Item } from '../../components';
 import { IProject } from '../../model/Projects';
 import colors from '../../utils/constants/colors.json';
@@ -15,18 +14,6 @@ interface IProjectContainerProps {
 
 const ProjectContainer: React.FC<IProjectContainerProps> = ({ project }) => {
   const theme = useTheme();
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(
-      { pathname: '' },
-      {
-        state: {
-          project,
-        },
-      }
-    );
-  };
 
   return (
     <Box
@@ -48,9 +35,8 @@ const ProjectContainer: React.FC<IProjectContainerProps> = ({ project }) => {
           backgroundColor: `${colors[theme.palette.mode].black[200]}47`,
         },
       }}
-      onClick={handleClick}
     >
-      {<Item size={70} icon={project.icon} />}
+      {<Item size={70} icon={project.id} />}
       <Typography fontWeight={700} fontSize={18} align="center">
         {project.title}
       </Typography>
@@ -118,7 +104,7 @@ const Projects: React.FC<IProjectsProps> = () => {
           }}
         >
           {projects.map((project) => (
-            <ProjectContainer key={project.icon} project={project} />
+            <ProjectContainer key={project.id} project={project} />
           ))}
         </Box>
       </ContentLimitator>

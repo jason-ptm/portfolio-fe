@@ -1,6 +1,6 @@
 export interface IProject {
   title: string;
-  icon: string;
+  id: string;
   shortDescription: string;
   longDescription: string;
   date: string;
