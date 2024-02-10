@@ -4,7 +4,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { ColorModeContext, StorageService } from '../../utils';
+import { ColorModeContext, StorageService, darkModeKey } from '../../utils';
 import * as colors from '../../utils/constants/colors.json';
 import './style/index.css';
 
@@ -30,8 +30,11 @@ const Tools: React.FC<IToolsProps> = () => {
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: '100%',
-          backgroundColor: colors[theme.palette.mode].black[900],
-          color: colors[theme.palette.mode].black[100],
+          backgroundColor: colors[theme.palette.mode].black[500],
+          color:
+            theme.palette.mode === darkModeKey
+              ? colors[theme.palette.mode].black[1000]
+              : colors[theme.palette.mode].black[100],
           cursor: 'pointer',
           bottom: '20px',
           left: '30px',
@@ -50,8 +53,11 @@ const Tools: React.FC<IToolsProps> = () => {
           width: '70px',
           height: '50px',
           borderRadius: '8px',
-          backgroundColor: colors[theme.palette.mode].black[900],
-          color: colors[theme.palette.mode].black[100],
+          backgroundColor: colors[theme.palette.mode].black[500],
+          color:
+            theme.palette.mode === darkModeKey
+              ? colors[theme.palette.mode].black[1000]
+              : colors[theme.palette.mode].black[100],
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
