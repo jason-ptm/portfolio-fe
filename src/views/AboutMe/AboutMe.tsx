@@ -24,6 +24,7 @@ const AboutMe: React.FC<IAboutMeProps> = () => {
     const aTag = document.createElement('a');
     aTag.href = url;
     aTag.setAttribute('download', CV_NAME);
+    aTag.setAttribute('target', '_blank');
     document.body.appendChild(aTag);
     aTag.click();
     aTag.remove();
