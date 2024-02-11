@@ -21,49 +21,11 @@ interface IRoute {
   offset: number;
 }
 
-interface NavBarItemLinkProps {
-  link: string;
-  label: string;
-  offset: number;
-}
-
 interface NavBarMenuItemProps {
   handleClose: () => void;
   open: boolean;
   iconColor: string;
 }
-
-export const NavBarItemLink: React.FC<NavBarItemLinkProps> = ({
-  link,
-  label,
-  offset,
-}) => {
-  const theme = useTheme();
-
-  return (
-    <Typography
-      variant="h6"
-      fontWeight={500}
-      sx={{ display: 'flex', alignItems: 'center' }}
-    >
-      <Link
-        to={link}
-        spy={true}
-        smooth={true}
-        offset={offset}
-        duration={500}
-        className="navlink"
-        activeStyle={{
-          textDecoration: 'none',
-          color: colors[theme.palette.mode].black[900],
-          transition: 'all 1s',
-        }}
-      >
-        {label}
-      </Link>
-    </Typography>
-  );
-};
 
 export const NavBarMenuItem: React.FC<NavBarMenuItemProps> = ({
   handleClose,
@@ -220,12 +182,29 @@ const NavBar: React.FC<INavBarProps> = () => {
           <Box sx={getMenuStyles('')}>
             {Object.values(routes).map((route: IRoute, index) =>
               route?.label ? (
-                <NavBarItemLink
+                <Typography
                   key={index}
-                  offset={route.offset}
-                  link={route.label}
-                  label={t(`navBar.${route.label}`)}
-                />
+                  variant="h6"
+                  fontWeight={500}
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <Link
+                    onClick={() => setOpen(false)}
+                    to={route.label}
+                    spy={true}
+                    smooth={true}
+                    offset={route.offset}
+                    duration={500}
+                    className="navlink"
+                    activeStyle={{
+                      textDecoration: 'none',
+                      color: colors[theme.palette.mode].black[900],
+                      transition: 'all 1s',
+                    }}
+                  >
+                    {t(`navBar.${route.label}`)}
+                  </Link>
+                </Typography>
               ) : (
                 <></>
               )
