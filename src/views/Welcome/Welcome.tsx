@@ -61,6 +61,7 @@ export const Background: React.FC = () => {
         top: 0,
         left: 0,
         zIndex: '-1',
+        minHeight: '700px',
       }}
     >
       <Box
@@ -69,6 +70,27 @@ export const Background: React.FC = () => {
           backgroundColor: colors[theme.palette.mode].blue[1000],
         }}
       />
+      <Box
+        sx={{
+          margin: '20px 0',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100px',
+          height: '100px',
+          borderRadius: '50px',
+          backgroundColor: colors[theme.palette.mode].blue[1000],
+          cursor: 'pointer',
+          position: 'absolute',
+          zIndex: 100,
+          top: 'calc(50% + 186px)',
+          left: 'calc(50% - 50px)',
+        }}
+      >
+        <span className="slide-top">
+          <KeyboardArrowDownIcon height="30px" width="30px" />
+        </span>
+      </Box>
       <Box sx={{ flex: '1' }} />
     </Box>
   );
@@ -85,6 +107,7 @@ const Welcome: React.FC<IWelcomeProps> = () => {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
+        minHeight: '700px',
       }}
     >
       <Background />
@@ -137,27 +160,6 @@ const Welcome: React.FC<IWelcomeProps> = () => {
               />
             </span>
           </Typography>
-          <Box
-            sx={{
-              margin: '20px 0',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100px',
-              height: '100px',
-              borderRadius: '50px',
-              backgroundColor: colors[theme.palette.mode].blue[1000],
-              cursor: 'pointer',
-              position: 'absolute',
-              zIndex: 100,
-              top: 'calc(50% + 176px)',
-              left: 'calc(50% - 50px)',
-            }}
-          >
-            <span className="slide-top">
-              <KeyboardArrowDownIcon height="30px" width="30px" />
-            </span>
-          </Box>
         </Box>
       </ContentLimitator>
     </Box>
