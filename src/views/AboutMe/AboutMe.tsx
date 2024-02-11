@@ -10,46 +10,17 @@ import './style/index.css';
 
 interface IAboutMeProps {}
 
-interface IButtonsProps {
-  label: string;
-  icon: ReactNode;
-}
-
-const CustomButton: React.FC<IButtonsProps> = ({ label, icon }) => {
-  const theme = useTheme();
-
-  return (
-    <Button
-      sx={{
-        cursor: 'pointer',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '250px',
-        height: '50px',
-        borderRadius: '4px',
-        border: `1px solid ${colors[theme.palette.mode].black[200]}`,
-        gap: '8px',
-        boxShadow: `4px 4px 0px 0px ${colors[theme.palette.mode].blue[600]}`,
-        color: colors[theme.palette.mode].black[900],
-      }}
-    >
-      <Typography align="center" fontFamily="Inter" fontWeight={500}>
-        {label}
-      </Typography>
-      {icon}
-    </Button>
-  );
-};
-
 const AboutMe: React.FC<IAboutMeProps> = () => {
   const { t } = useTranslation();
   const theme = useTheme();
 
   return (
     <Box
-      sx={{ display: 'flex', justifyContent: 'center', padding: '100px 0 50px 0' }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '100px 0 50px 0',
+      }}
       id="about"
     >
       <ContentLimitator>
@@ -102,10 +73,29 @@ const AboutMe: React.FC<IAboutMeProps> = () => {
             <Typography variant="h6" fontWeight={300}>
               {t('about.text2')}
             </Typography>
-            <CustomButton
-              label={t('about.cv')}
-              icon={<CloudDownloadOutlinedIcon />}
-            />
+            <Button
+              sx={{
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '250px',
+                height: '50px',
+                borderRadius: '4px',
+                border: `1px solid ${colors[theme.palette.mode].black[200]}`,
+                gap: '8px',
+                boxShadow: `4px 4px 0px 0px ${
+                  colors[theme.palette.mode].blue[600]
+                }`,
+                color: colors[theme.palette.mode].black[900],
+              }}
+            >
+              <Typography align="center" fontFamily="Inter" fontWeight={500}>
+                {t('about.cv')}
+              </Typography>
+              <CloudDownloadOutlinedIcon />
+            </Button>
           </Box>
         </Box>
       </ContentLimitator>
