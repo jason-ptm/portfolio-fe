@@ -1,18 +1,33 @@
 import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined';
 import { Box, Button, Typography, useTheme } from '@mui/material';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import AboutImage from '../../assets/about-me.png';
 import { ContentLimitator } from '../../components';
 import colors from '../../utils/constants/colors.json';
+import {
+  CV_NAME,
+  ENGLISH_CV_ROUTE,
+  SPANISH_CV_ROUTE,
+} from '../../utils/constants/constants';
 import './style/index.css';
 
 interface IAboutMeProps {}
 
 const AboutMe: React.FC<IAboutMeProps> = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const theme = useTheme();
+
+  const handleClickDonwload = () => {
+    const url = i18n.language === 'es' ? SPANISH_CV_ROUTE : ENGLISH_CV_ROUTE;
+    const aTag = document.createElement('a');
+    aTag.href = url;
+    aTag.setAttribute('download', CV_NAME);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
 
   return (
     <Box
@@ -90,6 +105,7 @@ const AboutMe: React.FC<IAboutMeProps> = () => {
                 }`,
                 color: colors[theme.palette.mode].black[900],
               }}
+              onClick={handleClickDonwload}
             >
               <Typography align="center" fontFamily="Inter" fontWeight={500}>
                 {t('about.cv')}
