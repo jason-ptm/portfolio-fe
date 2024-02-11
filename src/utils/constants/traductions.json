@@ -3,56 +3,56 @@
     "translation": {
       "navBar": {
         "home": "Inicio",
-        "about": "Sobre mi",
+        "about": "Sobre mí",
         "resume": "Resumen",
         "projects": "Proyectos",
-        "english": "English",
+        "english": "Inglés",
         "spanish": "Español"
       },
       "welcome": {
-        "title1": "Hola! soy",
+        "title1": "¡Hola! Soy",
         "title2": "Jason Solarte",
         "title3": "Soy desarrollador",
         "professions": ["front-end.", "back-end.", "full-stack."]
       },
       "about": {
-        "title": "Soy Jason Solarte, un desarrollador web trabajando como Freelancer desde Bogota, Colombia.",
-        "text1": "Sobre los pasados 2+ años, he trabajado en varias areas del desarrollo digital, incluyendo desarrollo front-end, back-end y diseño web. Soy un estudiante universitario con ancias de nuevos retos.",
-        "text2": "En estos dias, me enfoco en aprender cada vez mas del mundo del desarrollo, mejorar mis conocmientos previos y dar lo mejor de mi en cada proyecto personal o profesional.",
+        "title": "Soy Jason Solarte, un desarrollador web trabajando como Freelancer desde Bogotá, Colombia.",
+        "text1": "En los últimos 2+ años, he trabajado en varias áreas del desarrollo digital, incluyendo desarrollo front-end, back-end y diseño web. Soy un estudiante universitario con ansias de nuevos retos.",
+        "text2": "En estos días, me enfoco en aprender cada vez más del mundo del desarrollo, mejorar mis conocimientos previos y dar lo mejor de mí en cada proyecto personal o profesional.",
         "cv": "Descargar CV"
       },
       "resume": {
         "sections": [
           {
             "label": "education",
-            "title": "Educacion",
+            "title": "Educación",
             "items": [
               {
                 "icon": "ud",
                 "startDate": "Enero 2021",
                 "endDate": "Actualidad",
-                "title": "Ingenieria en sistemas",
-                "subtitle": "Universidad Francisco Jose de Caldas",
-                "text": "Como estudiante de pregrado de septimo semestre, me caracterizo por mi compromiso, responsabilidad y desempeño, destacando en las materias de programacion y logica."
+                "title": "Ingeniería en sistemas",
+                "subtitle": "Universidad Francisco José de Caldas",
+                "text": "Como estudiante de pregrado de séptimo semestre, me caracterizo por mi compromiso, responsabilidad y desempeño, destacando en las materias de programación y lógica."
               },
               {
                 "icon": "sena",
                 "startDate": "Febrero 2018",
                 "endDate": "Noviembre 2019",
-                "title": "Tecnico en programacion de software",
+                "title": "Técnico en programación de software",
                 "subtitle": "SENA",
-                "text": "Durante este curso sente las bases de lo que se ha convertido en una pasion genuina y un viaje de aprendizaje continuo en el desarrollo digital."
+                "text": "Durante este curso senté las bases de lo que se ha convertido en una pasión genuina y un viaje de aprendizaje continuo en el desarrollo digital."
               },
               {
                 "icon": "google",
                 "startDate": "Diciembre 2023",
-                "title": "Introduccion a Git y GitHub",
+                "title": "Introducción a Git y GitHub",
                 "subtitle": "Google"
               },
               {
                 "icon": "coursera",
                 "startDate": "Noviembre 2023",
-                "title": "Conterizar una aplicacion full-stack en Docker",
+                "title": "Contenerizar una aplicación full-stack en Docker",
                 "subtitle": "Coursera Project Network"
               },
               {
@@ -64,13 +64,13 @@
               {
                 "startDate": "Junio 2022",
                 "title": "Master JS, desarrollo en JavaScript",
-                "subtitle": "Noble Work Fundation"
+                "subtitle": "Noble Work Foundation"
               },
               {
                 "icon": "cisco",
                 "startDate": "Agosto 2022",
                 "endDate": "Noviembre 2022",
-                "title": "Programacion esencial",
+                "title": "Programación esencial",
                 "subtitle": "CISCO"
               }
             ]
@@ -111,7 +111,6 @@
                     "label": "JavaScript",
                     "icon": "js"
                   },
-
                   {
                     "label": "HTML5",
                     "icon": "html"
@@ -121,7 +120,7 @@
                     "icon": "css"
                   },
                   {
-                    "label": "Ingles B2",
+                    "label": "Inglés B2",
                     "icon": "lang"
                   },
                   {
