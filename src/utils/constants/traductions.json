@@ -138,6 +138,10 @@
                     "icon": "react"
                   },
                   {
+                    "label": "Java",
+                    "icon": "java"
+                  },
+                  {
                     "label": "SQL",
                     "icon": "sql"
                   },
@@ -374,6 +378,10 @@
                   {
                     "label": "React Native",
                     "icon": "react"
+                  },
+                  {
+                    "label": "Java",
+                    "icon": "java"
                   },
                   {
                     "label": "SQL",

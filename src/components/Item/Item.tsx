@@ -10,6 +10,7 @@ import LogoFigma from './../../assets/logos/logo-figma.png';
 import LogoGit from './../../assets/logos/logo-git.png';
 import LogoGithub from './../../assets/logos/logo-github.png';
 import LogoHtml from './../../assets/logos/logo-html.png';
+import LogoJava from './../../assets/logos/logo-java.png';
 import LogoJira from './../../assets/logos/logo-jira.png';
 import LogoJs from './../../assets/logos/logo-js.png';
 import LogoLang from './../../assets/logos/logo-lang.png';
@@ -237,6 +238,16 @@ const Item: React.FC<IItemProps> = ({ size, icon }) => {
           <LazyLoadImage
             effect="blur"
             src={LogoDocker}
+            width={size}
+            height={size}
+            style={{ objectFit: 'contain' }}
+          />
+        );
+      case 'java':
+        return (
+          <LazyLoadImage
+            effect="blur"
+            src={LogoJava}
             width={size}
             height={size}
             style={{ objectFit: 'contain' }}
