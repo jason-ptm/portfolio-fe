@@ -80,18 +80,18 @@
             "title": "Experiencia",
             "items": [
               {
-                "startDate": "Diciembre 2021",
-                "endDate": "Agosto 2023",
-                "title": "Desarrollador Web Freelancer",
-                "subtitle": "",
-                "text": "En mi experiencia como Desarrollador Web Freelancer, mi trabajo abarcó desde el diseño inicial hasta la implementación y corrección de proyectos y páginas web. Mi enfoque multifacético me permitió participar activamente en todas las etapas del desarrollo, desde la concepción y diseño hasta el despliegue final, garantizando la entrega de productos web funcionales y estéticamente atractivos."
-              },
-              {
-                "startDate": "Agosto 2023",
-                "endDate": "Actualidad",
+                "startDate": "Febrero 2023",
+                "endDate": "Presente",
                 "title": "Especialista en Desarrollo Front-end y Soporte Técnico",
                 "subtitle": "Terios agency",
                 "text": "En mi rol como Especialista en Desarrollo Front-end y Soporte Técnico en una empresa de desarrollo, me encargo de la detección y corrección de errores en proyectos de front-end. Mi labor abarca la creación de nuevos componentes, ofreciendo un respaldo esencial para abordar diversas solicitudes en una variedad de proyectos. Principalmente, utilizo ReactJS y React Native para el desarrollo front-end, aunque ocasionalmente brindo asistencia en tareas mínimas del back-end. Esta posición me sitúa en el centro de múltiples proyectos de temáticas diversas, contribuyendo a la eficiencia y éxito general del equipo de desarrollo."
+              },
+              {
+                "startDate": "Septiembre 2021",
+                "endDate": "Febrero 2023",
+                "title": "Desarrollador Web Freelancer",
+                "subtitle": "",
+                "text": "En mi experiencia como Desarrollador Web Freelancer, mi trabajo abarcó desde el diseño inicial hasta la implementación y corrección de proyectos y páginas web. Mi enfoque multifacético me permitió participar activamente en todas las etapas del desarrollo, desde la concepción y diseño hasta el despliegue final, garantizando la entrega de productos web funcionales y estéticamente atractivos."
               }
             ]
           },
@@ -100,7 +100,7 @@
             "title": "Habilidades",
             "items": [
               {
-                "title": "Habilidades principales",
+                "title": "Main skills",
                 "color": "blue",
                 "items": [
                   {
@@ -108,9 +108,32 @@
                     "icon": "react"
                   },
                   {
+                    "label": "Angular",
+                    "icon": "angular"
+                  }
+                  ,
+                  {
+                    "label": "Spring boot",
+                    "icon": "spring"
+                  },
+                  {
                     "label": "JavaScript",
                     "icon": "js"
                   },
+                  {
+                    "label": "English B2",
+                    "icon": "lang"
+                  },
+                  {
+                    "label": "Native Spanish",
+                    "icon": "lang"
+                  }
+                ]
+              },
+              {
+                "title": "Development skills",
+                "color": "red",
+                "items": [
                   {
                     "label": "HTML5",
                     "icon": "html"
@@ -119,20 +142,6 @@
                     "label": "CSS3",
                     "icon": "css"
                   },
-                  {
-                    "label": "Inglés B2",
-                    "icon": "lang"
-                  },
-                  {
-                    "label": "Español nativo",
-                    "icon": "flag"
-                  }
-                ]
-              },
-              {
-                "title": "Desarrollo",
-                "color": "red",
-                "items": [
                   {
                     "label": "React Native",
                     "icon": "react"
@@ -146,8 +155,8 @@
                     "icon": "sql"
                   },
                   {
-                    "label": "NodeJs",
-                    "icon": "node"
+                    "label": "NestJs",
+                    "icon": "nest"
                   },
                   {
                     "label": "Git",
@@ -168,7 +177,7 @@
                 ]
               },
               {
-                "title": "Plataformas",
+                "title": "Relevant plataforms",
                 "color": "green",
                 "items": [
                   {
@@ -321,18 +330,18 @@
             "title": "Experience",
             "items": [
               {
-                "startDate": "December 2021",
-                "endDate": "August 2023",
-                "title": "Freelance Web Developer",
-                "subtitle": "",
-                "text": "In my experience as a Freelance Web Developer, my work ranged from the initial design to the implementation and correction of projects and web pages. My multifaceted approach allowed me to actively participate in all stages of development, from conception and design to the final deployment, ensuring the delivery of functional and aesthetically appealing web products."
-              },
-              {
-                "startDate": "August 2023",
+                "startDate": "February 2023",
                 "endDate": "Present",
                 "title": "Front-end Development Specialist and Technical Support",
                 "subtitle": "Terios Agency",
                 "text": "In my role as a Front-end Development Specialist and Technical Support in a development company, I am responsible for detecting and correcting errors in front-end projects. My work includes creating new components, providing essential support to address various requests in a variety of projects. Primarily, I use ReactJS and React Native for front-end development, occasionally assisting with minimal back-end tasks. This position places me at the center of multiple projects with diverse themes, contributing to the overall efficiency and success of the development team."
+              },
+              {
+                "startDate": "Septiembre 2021",
+                "endDate": "February 2023",
+                "title": "Freelance Web Developer",
+                "subtitle": "",
+                "text": "In my experience as a Freelance Web Developer, my work ranged from the initial design to the implementation and correction of projects and web pages. My multifaceted approach allowed me to actively participate in all stages of development, from conception and design to the final deployment, ensuring the delivery of functional and aesthetically appealing web products."
               }
             ]
           },
@@ -349,10 +358,32 @@
                     "icon": "react"
                   },
                   {
+                    "label": "Angular",
+                    "icon": "angular"
+                  }
+                  ,
+                  {
+                    "label": "Spring boot",
+                    "icon": "spring"
+                  },
+                  {
                     "label": "JavaScript",
                     "icon": "js"
                   },
-
+                  {
+                    "label": "English B2",
+                    "icon": "lang"
+                  },
+                  {
+                    "label": "Native Spanish",
+                    "icon": "lang"
+                  }
+                ]
+              },
+              {
+                "title": "Development skills",
+                "color": "red",
+                "items": [
                   {
                     "label": "HTML5",
                     "icon": "html"
@@ -361,20 +392,6 @@
                     "label": "CSS3",
                     "icon": "css"
                   },
-                  {
-                    "label": "English B2",
-                    "icon": "lang"
-                  },
-                  {
-                    "label": "Native Spanish",
-                    "icon": "flag"
-                  }
-                ]
-              },
-              {
-                "title": "Development skills",
-                "color": "red",
-                "items": [
                   {
                     "label": "React Native",
                     "icon": "react"
@@ -388,8 +405,8 @@
                     "icon": "sql"
                   },
                   {
-                    "label": "NodeJs",
-                    "icon": "node"
+                    "label": "NestJs",
+                    "icon": "nest"
                   },
                   {
                     "label": "Git",

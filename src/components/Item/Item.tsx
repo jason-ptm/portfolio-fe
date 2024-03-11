@@ -2,6 +2,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // images
+import LogoAngular from './../../assets/logos/logo-angular.png';
 import LogoAws from './../../assets/logos/logo-aws.png';
 import LogoBitbucket from './../../assets/logos/logo-bitbucket.png';
 import LogoCss from './../../assets/logos/logo-css.png';
@@ -19,6 +20,7 @@ import LogoNode from './../../assets/logos/logo-node.png';
 import LogoReact from './../../assets/logos/logo-react.png';
 import LogoSlack from './../../assets/logos/logo-slack.png';
 import ColombiaFlag from './../../assets/logos/logo-spanish.png';
+import LogoSpring from './../../assets/logos/logo-spring.png';
 import LogoSql from './../../assets/logos/logo-sql.png';
 import LogoWordpress from './../../assets/logos/logo-wordpress.png';
 import HolperIcon from './../../assets/projects/holper.png';
@@ -248,6 +250,26 @@ const Item: React.FC<IItemProps> = ({ size, icon }) => {
           <LazyLoadImage
             effect="blur"
             src={LogoJava}
+            width={size}
+            height={size}
+            style={{ objectFit: 'contain' }}
+          />
+        );
+      case 'spring':
+        return (
+          <LazyLoadImage
+            effect="blur"
+            src={LogoSpring}
+            width={size}
+            height={size}
+            style={{ objectFit: 'contain' }}
+          />
+        );
+      case 'angular':
+        return (
+          <LazyLoadImage
+            effect="blur"
+            src={LogoAngular}
             width={size}
             height={size}
             style={{ objectFit: 'contain' }}
